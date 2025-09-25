@@ -21,12 +21,7 @@ ynh_script_progression "Upgrading source files..."
 
 ynh_setup_source --dest_dir="$install_dir" --full_replace --keep="warpgate.yaml"
 
-#=================================================
-# UPDATE A CONFIG FILE
-#=================================================
-ynh_script_progression "Updating $app's configuration files..."
-
-ynh_config_add --template="warpgate.yaml" --destination="$install_dir/warpgate.yaml"
+chmod +x $install_dir/warpgate
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATION

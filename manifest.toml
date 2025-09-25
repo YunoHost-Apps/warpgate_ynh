@@ -4,7 +4,7 @@ packaging_format = 2
 
 id = "warpgate"
 name = "Warpgate"
-description.en = "Fully transparent SSH, HTTPS, MySQL and Postgres bastion/PAM"
+description.en = "Fully transparent SSH, HTTPS bastion/PAM"
 description.fr = "Expliquez en *quelques* (10~15) mots l'utilité de l'app ou ce qu'elle fait (l'objectif est de donner une idée grossière pour des utilisateurs qui naviguent dans un catalogue de 100+ apps)"
 
 version = "0.16.0~ynh1"
@@ -14,9 +14,7 @@ maintainers = ["eric_G"]
 [upstream]
 license = "Apache-2.0"
 website = "https://warpgate.null.page/"
-demo = "https://demo.example.com"
 admindoc = "https://warpgate.null.page/getting-started/"
-userdoc = "https://yunohost.org/apps"
 code = "https://github.com/warp-tech/warpgate"
 
 [integration]
@@ -39,9 +37,6 @@ ram.runtime = "50M"
     [install.init_main_permission]
     type = "group"
     default = "visitors"
-
-    #[install.admin]
-    #type = "user"
 
     [install.password]
     type = "password"
@@ -70,8 +65,8 @@ ram.runtime = "50M"
 
     [resources.ports]
 
-    [resources.apt]
-    packages = "mariadb-server"
+    #[resources.apt]
+    #packages = "mariadb-server"
 
-    [resources.database]
-    type = "mysql"
+    #[resources.database]
+    #type = "mysql"

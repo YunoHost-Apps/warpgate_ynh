@@ -18,13 +18,6 @@ ynh_setup_source --dest_dir="$install_dir"
 chmod +x $install_dir/warpgate
 
 #=================================================
-# APP INITIAL CONFIGURATION
-#=================================================
-#ynh_script_progression "Adding $app's configuration files..."
-
-#ynh_config_add --template="warpgate.yaml" --destination="$install_dir/warpgate.yaml"
-
-#=================================================
 # SYSTEM CONFIGURATION
 #=================================================
 ynh_script_progression "Adding system configurations related to $app..."
@@ -43,11 +36,11 @@ yunohost service add "$app" --description="A short description of the app" --log
 ynh_script_progression "Installing the app..."
 
 pushd "$install_dir"
- 	ynh_hide_warnings ./warpgate --config=$install_dir/warpgate.yaml unattended-setup --data-path="$data_dir" --http-port=$port --admin-password=$password #--mysql-port="3306" --database-url="mysql://$db_user:$db_pwd@127.0.0.1:3306/$db_name" --external-host
+ 	ynh_hide_warnings ./warpgate --config=$install_dir/warpgate.yaml unattended-setup --data-path="$data_dir" --http-port=$port --admin-password=$password #--mysql-port="3306" --database-url="mysql://db_user:db_pwd@127.0.0.1:3306/db_name" --external-host
 popd
 
-chown -R $app: $install_dir
-chown -R $app: $data_dir
+chown -R $app:$app $install_dir
+chown -R $app:$app $data_dir
 
 #=================================================
 # START SYSTEMD SERVICE
