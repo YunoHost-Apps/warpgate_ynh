@@ -14,7 +14,7 @@ maintainers = ["eric_G"]
 [upstream]
 license = "Apache-2.0"
 website = "https://warpgate.null.page/"
-admindoc = "https://warpgate.null.page/getting-started/"
+admindoc = "https://warpgate.null.page/docs/"
 code = "https://github.com/warp-tech/warpgate"
 
 [integration]
