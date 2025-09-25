@@ -20,7 +20,7 @@ Fully transparent SSH, HTTPS bastion/PAM
 
 
 ## Screenshots
-![Screenshot of Warpgate](./doc/screenshots/example.jpg)
+![Screenshot of Warpgate](./doc/screenshots/screenshot.png)
 
 ## 📦 Developer info
 
