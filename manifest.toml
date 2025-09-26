@@ -21,7 +21,7 @@ code = "https://github.com/warp-tech/warpgate"
 yunohost = ">= 12.1.17"
 helpers_version = "2.1"
 architectures = ["amd64","arm64" ]
-multi_instance = true
+multi_instance = false
 
 ldap = false
 sso = false
@@ -56,8 +56,8 @@ ram.runtime = "30M"
     arm64.sha256 = "61358fd1e2b1d397ba608fbbedc5cc66a9cbc655c08becbb8876ae20677ad405"
 
     autoupdate.strategy = "latest_github_release"
-    autoupdate.asset.amd64 = "warpgate-v.*-x86_64-linux"
-    autoupdate.asset.arm64 = "warpgate-v.*-arm64-linux"
+    autoupdate.asset.amd64 = "warpgate-.*-x86_64-linux"
+    autoupdate.asset.arm64 = "warpgate-.*-arm64-linux"
 
     [resources.system_user]
 
@@ -70,8 +70,8 @@ ram.runtime = "30M"
 
     [resources.ports]
 
-    #[resources.apt]
-    #packages = "mariadb-server"
+    [resources.apt]
+    packages = "postgresql"
 
-    #[resources.database]
-    #type = "mysql"
+    [resources.database]
+    type = "postgresql"
