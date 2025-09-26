@@ -27,7 +27,7 @@ ynh_config_add_nginx
 # Create a dedicated systemd config
 ynh_config_add_systemd
 
-yunohost service add "$app" --description="A short description of the app" --log="/var/log/$app/$app.log"
+yunohost service add "$app" --description="Secure and authenticated SSH and HTTPS tunnels" --log="/var/log/$app/$app.log"
 
 #=================================================
 # INSTALL WARPGATE
