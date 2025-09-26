@@ -70,8 +70,8 @@ ram.runtime = "30M"
 
     [resources.ports]
 
-    #[resources.apt]
-    #packages = "mariadb-server"
+    [resources.apt]
+    packages = "mariadb-server"
 
-    #[resources.database]
-    #type = "mysql"
+    [resources.database]
+    type = "mysql"
