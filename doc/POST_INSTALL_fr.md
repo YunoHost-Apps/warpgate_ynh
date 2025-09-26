@@ -1,0 +1,1 @@
+Le nom d'utilisateur par défaut est `admin` et le mot de passe est celui que vous avez défini lors de l'installation.

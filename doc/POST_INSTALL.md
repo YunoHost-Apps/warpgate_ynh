@@ -1,1 +1,1 @@
-You can connect to the app with `admin` and your password
+The default username is `admin` and the password is the one you've set during setup.
