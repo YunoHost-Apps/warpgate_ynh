@@ -20,7 +20,7 @@ code = "https://github.com/warp-tech/warpgate"
 [integration]
 yunohost = ">= 12.1.17"
 helpers_version = "2.1"
-architectures = "all"
+architectures = ["amd64","arm64" ]
 multi_instance = true
 
 ldap = false
@@ -49,10 +49,15 @@ ram.runtime = "30M"
     in_subdir = false
     extract = false
     rename = "warpgate"
-    url = "https://github.com/warp-tech/warpgate/releases/download/v0.16.0/warpgate-v0.16.0-x86_64-linux"
-    sha256 = "c95186fdacff3944538387bd072f89e7abb014a18f4f9b31e20c08028f27c4a3"
+    amd64.url = "https://github.com/warp-tech/warpgate/releases/download/v0.16.0/warpgate-v0.16.0-x86_64-linux"
+    amd64.sha256 = "c95186fdacff3944538387bd072f89e7abb014a18f4f9b31e20c08028f27c4a3"
 
-    # autoupdate.strategy = "latest_github_tag"
+    arm64.url = "https://github.com/warp-tech/warpgate/releases/download/v0.16.0/warpgate-v0.16.0-arm64-linux"
+    arm64.sha256 = "61358fd1e2b1d397ba608fbbedc5cc66a9cbc655c08becbb8876ae20677ad405"
+
+    autoupdate.strategy = "latest_github_release"
+    autoupdate.asset.amd64 = "warpgate-v.*-x86_64-linux"
+    autoupdate.asset.arm64 = "warpgate-v.*-arm64-linux"
 
     [resources.system_user]
 
