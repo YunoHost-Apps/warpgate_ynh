@@ -31,11 +31,11 @@ ynh_backup "/etc/nginx/conf.d/$domain.d/$app.conf"
 ynh_backup "/etc/systemd/system/$app.service"
 
 #=================================================
-# BACKUP THE MYSQL DATABASE
+# BACKUP THE DATABASE
 #=================================================
-ynh_print_info "Backing up the MySQL database..."
+ynh_print_info "Backing up the postgresql database..."
 
-ynh_mysql_dump_db > db.sql
+ynh_psql_dump_db > db.sql
 
 #=================================================
 # END OF SCRIPT
