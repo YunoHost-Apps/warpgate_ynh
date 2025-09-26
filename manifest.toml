@@ -21,7 +21,7 @@ code = "https://github.com/warp-tech/warpgate"
 yunohost = ">= 12.1.17"
 helpers_version = "2.1"
 architectures = ["amd64","arm64" ]
-multi_instance = true
+multi_instance = false
 
 ldap = false
 sso = false
@@ -70,8 +70,8 @@ ram.runtime = "30M"
 
     [resources.ports]
 
-    #[resources.apt]
-    #packages = "mariadb-server"
+    [resources.apt]
+    packages = "postgresql"
 
-    #[resources.database]
-    #type = "mysql"
+    [resources.database]
+    type = "postgresql"

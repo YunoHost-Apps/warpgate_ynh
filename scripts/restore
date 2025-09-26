@@ -21,11 +21,11 @@ ynh_script_progression "Restoring the data directory..."
 ynh_restore "$data_dir"
 
 #=================================================
-# RESTORE THE MYSQL DATABASE
+# RESTORE THE DATABASE
 #=================================================
-#ynh_script_progression "Restoring the MySQL database..."
+ynh_script_progression "Restoring the PostgreSQL database..."
 
-#ynh_mysql_db_shell < ./db.sql
+ynh_psql_db_shell < ./db.sql
 
 #=================================================
 # RESTORE SYSTEM CONFIGURATION
@@ -44,7 +44,6 @@ yunohost service add "$app" --description="Secure and authenticated SSH and HTTP
 #=================================================
 ynh_script_progression "Reloading NGINX web server and $app's service..."
 
-### Typically you only have either $app or PHP-FPM but not both at the same time...
 ynh_systemctl --service="$app" --action="start"
 
 ynh_systemctl --service=nginx --action=reload
