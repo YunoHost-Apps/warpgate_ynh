@@ -8,7 +8,7 @@ It shall NOT be edited by hand.
   Warpgate, packaged for YunoHost
 </h1>
 
-Fully transparent SSH, HTTPS bastion/PAM
+Secure and authenticated SSH and HTTPS tunnels
 
 [![🌐 Official app website](https://img.shields.io/badge/Official_app_website-darkgreen?style=for-the-badge)](https://warpgate.null.page/)
 [![Version: 0.16.0~ynh1](https://img.shields.io/badge/Version-0.16.0~ynh1-rgb(18,138,11)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/warpgate/)
