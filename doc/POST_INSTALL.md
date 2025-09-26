@@ -1,0 +1,1 @@
+You can connect to the app with `admin` and your password
