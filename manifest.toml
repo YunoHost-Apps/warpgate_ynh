@@ -56,8 +56,8 @@ ram.runtime = "30M"
     arm64.sha256 = "61358fd1e2b1d397ba608fbbedc5cc66a9cbc655c08becbb8876ae20677ad405"
 
     autoupdate.strategy = "latest_github_release"
-    autoupdate.asset.amd64 = "warpgate-.*-x86_64-linux"
-    autoupdate.asset.arm64 = "warpgate-.*-arm64-linux"
+    autoupdate.asset.amd64 = "^warpgate-.*-x86_64-linux$"
+    autoupdate.asset.arm64 = "^warpgate-.*-arm64-linux$"
 
     [resources.system_user]
 
