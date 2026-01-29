@@ -49,15 +49,16 @@ ram.runtime = "30M"
     in_subdir = false
     extract = false
     rename = "warpgate"
-    amd64.url = "https://github.com/warp-tech/warpgate/releases/download/v0.20.0/warpgate-v0.20.0-x86_64-linux"
-    amd64.sha256 = "a4cc53066a2362e821dd93d45e19c03bc0732c50511566c6a9e82b909dc97bdd"
+    amd64.url = "https://github.com/orhtej2/warpgate/releases/download/v0.20.0/warpgate-v0.20.0-x86_64-linux"
+    amd64.sha256 = "f67b655ee7b88044b63f66398513f049fa0e0ba9768695b0f96930b0b514a138"
 
-    arm64.url = "https://github.com/warp-tech/warpgate/releases/download/v0.20.0/warpgate-v0.20.0-arm64-linux"
-    arm64.sha256 = "00c3667090c4a1335393b93f22fe707373914c91f34243cfee1b233aa34431f1"
+    arm64.url = "https://github.com/orhtej2/warpgate/releases/download/v0.20.0/warpgate-v0.20.0-arm64-linux"
+    arm64.sha256 = "3f651543ea5febf8240758c1a633ddc6a0247d6e7262d4060ae23502d2fbb958"
 
     autoupdate.strategy = "latest_github_release"
     autoupdate.asset.amd64 = "^warpgate-.*-x86_64-linux$"
     autoupdate.asset.arm64 = "^warpgate-.*-arm64-linux$"
+    autoupdate.upstream = "https://github.com/orhtej2/warpgate"
 
     [resources.system_user]
 
