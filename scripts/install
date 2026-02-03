@@ -6,8 +6,6 @@
 
 source /usr/share/yunohost/helpers
 
-ssh_port="$(yunohost settings get security.ssh.ssh_port)"
-
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
@@ -29,7 +27,7 @@ ynh_config_add_nginx
 # Create a dedicated systemd config
 ynh_config_add_systemd
 
-yunohost service add "$app" --description="Secure and authenticated SSH and HTTPS tunnels" --log="/var/log/$app/$app.log"
+yunohost service add "$app" --description="Secure and authenticated SSH, HTTP, MYSQL and PGSQL tunnels" --log="/var/log/$app/$app.log"
 
 #=================================================
 # INSTALL WARPGATE
@@ -37,7 +35,7 @@ yunohost service add "$app" --description="Secure and authenticated SSH and HTTP
 ynh_script_progression "Installing the app..."
 
 pushd "$install_dir"
- 	ynh_hide_warnings ./warpgate --config=$install_dir/warpgate.yaml unattended-setup --data-path="$data_dir" --ssh-port=$ssh_port --http-port=$port --admin-password=$password --postgres-port="55432" --database-url="postgres://$db_user:$db_pwd@127.0.0.1:5432/$db_name" #--external-host
+ 	ynh_hide_warnings ./warpgate --config=$install_dir/warpgate.yaml unattended-setup --data-path="$data_dir" --ssh-port=$port_ssh --http-port=$port --mysql-port=$port_mysql --postgres-port=$port_pgsql --admin-password=$password --database-url="postgres://$db_user:$db_pwd@127.0.0.1:5432/$db_name" --external-host="$domain"
 popd
 
 chown -R $app:$app $install_dir
