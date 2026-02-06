@@ -16,10 +16,16 @@ ynh_systemctl --service="$app" --action="stop"
 #=================================================
 # MODIFY URL IN NGINX CONF
 #=================================================
-ynh_script_progression "Updating NGINX web server configuration..."
+ynh_script_progression "Updating web server configuration..."
 
-# this will most likely adjust NGINX config correctly
 ynh_config_change_url_nginx
+
+#=================================================
+# MODIFY EXTERNAL_HOST IN WARPGATE.YAML
+#=================================================
+ynh_script_progression "Updating $app configuration..."
+
+ynh_write_var_in_file --file=$install_dir/warpgate.yaml --key=external_host --value=$new_domain
 
 #=================================================
 # START SYSTEMD SERVICE

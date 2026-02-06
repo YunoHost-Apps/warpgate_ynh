@@ -23,6 +23,19 @@ ynh_setup_source --dest_dir="$install_dir" --full_replace --keep="warpgate.yaml"
 chmod +x $install_dir/warpgate
 
 #=================================================
+# UPDATE WARPGATE.YAML
+#=================================================
+if ynh_app_upgrading_from_version_before_or_equal_to 0.18.0~ynh1; then
+	ynh_script_progression "Updating warpgate.yaml..."
+    
+    ynh_write_var_in_file --file=$install_dir/warpgate.yaml --key=external_host --value=$domain
+    ynh_write_var_in_file --file=$install_dir/warpgate.yaml --key=enable --value=true --after="mysql:"
+    ynh_replace --match=22 --replace=$port_ssh --file=$install_dir/warpgate.yaml
+    ynh_replace --match=33306 --replace=$port_mysql --file=$install_dir/warpgate.yaml
+    ynh_replace --match=55432 --replace=$port_postgres --file=$install_dir/warpgate.yaml
+fi
+
+#=================================================
 # REAPPLY SYSTEM CONFIGURATION
 #=================================================
 ynh_script_progression "Upgrading system configurations related to $app..."
@@ -31,7 +44,7 @@ ynh_config_add_nginx
 
 ynh_config_add_systemd
 
-yunohost service add "$app" --description="Secure and authenticated SSH and HTTPS tunnels" --log="/var/log/$app/$app.log"
+yunohost service add "$app" --description="Secure and authenticated SSH, HTTP, MYSQL and Postgres tunnels" --log="/var/log/$app/$app.log"
 
 #=================================================
 # START SYSTEMD SERVICE
