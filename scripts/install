@@ -6,14 +6,11 @@
 
 source /usr/share/yunohost/helpers
 
-ssh_port="$(yunohost settings get security.ssh.ssh_port)"
-
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Setting up source files..."
 
-# Download, check integrity, uncompress and patch the source from manifest.toml
 ynh_setup_source --dest_dir="$install_dir"
 
 chmod +x $install_dir/warpgate
@@ -23,21 +20,19 @@ chmod +x $install_dir/warpgate
 #=================================================
 ynh_script_progression "Adding system configurations related to $app..."
 
-# Create a dedicated NGINX config using the conf/nginx.conf template
 ynh_config_add_nginx
 
-# Create a dedicated systemd config
 ynh_config_add_systemd
 
-yunohost service add "$app" --description="Secure and authenticated SSH and HTTPS tunnels" --log="/var/log/$app/$app.log"
+yunohost service add "$app" --description="Secure and authenticated SSH, HTTPS, MYSQL and PGSQL tunnels" --log="/var/log/$app/$app.log"
 
 #=================================================
 # INSTALL WARPGATE
 #=================================================
-ynh_script_progression "Installing the app..."
+ynh_script_progression "Installing $app..."
 
 pushd "$install_dir"
- 	ynh_hide_warnings ./warpgate --config=$install_dir/warpgate.yaml unattended-setup --data-path="$data_dir" --ssh-port=$ssh_port --http-port=$port --admin-password=$password --postgres-port="55432" --database-url="postgres://$db_user:$db_pwd@127.0.0.1:5432/$db_name" #--external-host
+ 	ynh_hide_warnings ./warpgate --config=$install_dir/warpgate.yaml unattended-setup --data-path="$data_dir" --ssh-port=$port_ssh --http-port=$port --mysql-port=$port_mysql --postgres-port=$port_pgsql --admin-password=$password --database-url="postgres://$db_user:$db_pwd@127.0.0.1:5432/$db_name" --external-host="$domain"
 popd
 
 chown -R $app:$app $install_dir
@@ -48,7 +43,6 @@ chown -R $app:$app $data_dir
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-# Start a systemd service
 ynh_systemctl --service="$app" --action="start"
 
 #=================================================
