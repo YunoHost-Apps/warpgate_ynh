@@ -4,8 +4,8 @@ packaging_format = 2
 
 id = "warpgate"
 name = "Warpgate"
-description.en = "Secure and authenticated SSH, HTTPS, MYSQL and PGSQL tunnels"
-description.fr = "Tunnels SSH, HTTPS sécurisés et authentifiés"
+description.en = "Secure and authenticated SSH, HTTP, MYSQL and Postgres tunnels"
+description.fr = "Tunnels SSH, HTTP, MYSQL and Postgres sécurisés et authentifiés"
 
 version = "0.20.0~ynh1"
 
@@ -73,7 +73,7 @@ ram.runtime = "30M"
     [resources.ports]
     ssh.exposed = "TCP"
     mysql.exposed = "TCP"
-    pgsql.exposed = "TCP"
+    postgres.exposed = "TCP"
 
     [resources.apt]
     packages = "postgresql"
