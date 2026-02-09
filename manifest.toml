@@ -7,7 +7,7 @@ name = "Warpgate"
 description.en = "Secure and authenticated SSH, HTTP, MYSQL and Postgres tunnels"
 description.fr = "Tunnels SSH, HTTP, MYSQL and Postgres sécurisés et authentifiés"
 
-version = "0.20.0~ynh1"
+version = "0.20.2~ynh1"
 
 maintainers = ["eric_G"]
 
@@ -49,16 +49,16 @@ ram.runtime = "30M"
     in_subdir = false
     extract = false
     rename = "warpgate"
-    amd64.url = "https://github.com/orhtej2/warpgate/releases/download/v0.20.0/warpgate-v0.20.0-x86_64-linux"
-    amd64.sha256 = "e8906b3d02504ea82bd79fe050a61a0adea0ef5904d6e842e4fd54a40333279b"
+    amd64.url = "https://github.com/warp-tech/warpgate/releases/download/v0.20.2/warpgate-v0.20.2-x86_64-linux"
+    amd64.sha256 = "5e918f7b546bbe258e38df7140605066f4e85516de70a7a224066882a8f57012"
 
-    arm64.url = "https://github.com/orhtej2/warpgate/releases/download/v0.20.0/warpgate-v0.20.0-arm64-linux"
-    arm64.sha256 = "60b8cc662a1b6486c77761da331779bf1b6457d1760900f8533c32ad36c37cc7"
+    arm64.url = "https://github.com/warp-tech/warpgate/releases/download/v0.20.2/warpgate-v0.20.2-arm64-linux"
+    arm64.sha256 = "a3c7d8508899c36df04ec6d5c9029b3c6d60351983bd6dc156514868dcb5ee7e"
     
     autoupdate.strategy = "latest_github_release"
     autoupdate.asset.amd64 = "^warpgate-.*-x86_64-linux$"
     autoupdate.asset.arm64 = "^warpgate-.*-arm64-linux$"
-    autoupdate.upstream = "https://github.com/orhtej2/warpgate"
+    autoupdate.upstream = "https://github.com/warp-tech/warpgate"
     
 
     [resources.system_user]
