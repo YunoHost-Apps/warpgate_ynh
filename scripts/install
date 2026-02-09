@@ -38,6 +38,9 @@ popd
 chown -R $app:$app $install_dir
 chown -R $app:$app $data_dir
 
+ynh_write_var_in_file --file="$install_dir/warpgate.yaml" --key="trust_x_forwarded_headers" --value="true"
+ynh_write_var_in_file --file="$install_dir/warpgate.yaml" --key="enable" --value="true" --after="recordings"
+
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================

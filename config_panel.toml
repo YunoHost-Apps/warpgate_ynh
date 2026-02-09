@@ -1,0 +1,60 @@
+version = "1.0"
+
+[main]
+
+services = [ "__APP__" ]
+
+name.en = "Config panel"
+name.fr = "Panneau de configuration"
+
+help = "Here you can easily configure some things about your Warpgate instance."
+
+####################
+#### CUSTOMIZE
+####################
+
+[main.customize]
+
+    name = "Customize"
+
+    help = " -- enable/disable SSH, MYSQL, Postgres, and Session Recording"
+
+        [main.customize.ssh_enable]
+        ask.en = "SSH"
+        ask.fr = ""
+        help.en = "Connect to SSH servers via Warpgate"
+        help.fr = ""
+        type = "boolean"
+        default = 1
+        yes = "true"
+        no = "false"
+
+        [main.customize.mysql_enable]
+        ask.en = "MYSQL"
+        ask.fr = ""
+        help.en = "Connect to MYSQL servers via Warpgate"
+        help.fr = ""
+        type = "boolean"
+        default = 1
+        yes = "true"
+        no = "false"
+
+        [main.customize.postgres_enable]
+        ask.en = "Postgres"
+        ask.fr = ""
+        help.en = "Connect to Postgres servers via Warpgate"
+        help.fr = ""
+        type = "boolean"
+        default = 1
+        yes = "true"
+        no = "false"
+
+        [main.customize.recordings_enable]
+        ask.en = "Session Recording"
+        ask.fr = ""
+        help.en = "Record sessions connected through Warpgate for monitoring/playback"
+        help.fr = ""
+        type = "boolean"
+        default = 1
+        yes = "true"
+        no = "false"

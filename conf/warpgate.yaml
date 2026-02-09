@@ -1,0 +1,41 @@
+# Config generated in version v0.18.0-modified
+# yaml-language-server: $schema=https://raw.githubusercontent.com/warp-tech/warpgate/refs/heads/main/config-schema.json
+
+sso_providers: []
+recordings:
+  enable: __RECORDINGS_ENABLE__
+  path: __DATA_DIR__/recordings
+external_host: __DOMAIN__
+database_url: postgres://__DB_USER__:__DB_PWD__@127.0.0.1:5432/__DB_NAME__
+ssh:
+  enable: __SSH_ENABLE__
+  listen: '[::]:__PORT_SSH__'
+  external_port: null
+  keys: __DATA_DIR__/ssh-keys
+  host_key_verification: prompt
+  inactivity_timeout: 5m
+  keepalive_interval: null
+http:
+  listen: '[::]:__PORT__'
+  external_port: null
+  certificate: __DATA_DIR__/tls.certificate.pem
+  key: __DATA_DIR__/tls.key.pem
+  trust_x_forwarded_headers: false
+  session_max_age: 30m
+  cookie_max_age: 1day
+  sni_certificates: []
+mysql:
+  enable: __MYSQL_ENABLE__
+  listen: '[::]:__PORT_MYSQL__'
+  external_port: null
+  certificate: __DATA_DIR__/tls.certificate.pem
+  key: __DATA_DIR__/tls.key.pem
+postgres:
+  enable: __POSTGRES_ENABLE__
+  listen: '[::]:__PORT_POSTGRES__'
+  external_port: null
+  certificate: __DATA_DIR__/tls.certificate.pem
+  key: __DATA_DIR__/tls.key.pem
+log:
+  retention: 7days
+  send_to: null
