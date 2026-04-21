@@ -32,7 +32,7 @@ ynh_write_var_in_file --file=$install_dir/warpgate.yaml --key=external_host --va
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemctl --service="$app" --action="start" --log_path="/var/log/$app/$app.log"
+ynh_systemctl --service="$app" --action="start" --log_path=systemd
 
 #=================================================
 # END OF SCRIPT
