@@ -8,7 +8,7 @@ It shall NOT be edited by hand.
   Warpgate, packaged for YunoHost
 </h1>
 
-Secure and authenticated SSH, HTTP, MYSQL and Postgres tunnels
+Secure and authenticated SSH, HTTP, MYSQL, Postgres, and Kubernetes tunnels
 
 [![🌐 Official app website](https://img.shields.io/badge/Official_app_website-darkgreen?style=for-the-badge)](https://warpgate.null.page/)
 [![Version: 0.23.1~ynh1](https://img.shields.io/badge/Version-0.23.1~ynh1-rgb(18,138,11)?style=for-the-badge)](https://ci-apps.yunohost.org/ci/apps/warpgate/)

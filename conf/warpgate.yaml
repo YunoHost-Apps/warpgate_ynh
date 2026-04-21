@@ -1,0 +1,55 @@
+# Config generated in version v0.23.1-modified
+# yaml-language-server: $schema=https://raw.githubusercontent.com/warp-tech/warpgate/refs/heads/main/config-schema.json
+
+sso_providers: []
+recordings:
+  enable: true
+  path: __DATA_DIR__/recordings
+external_host: __DOMAIN__
+database_url: postgres://__DB_NAME__:__DB_PWD__@127.0.0.1:5432/__DB_NAME__
+ssh:
+  enable: true
+  listen: '[::]:__PORT_SSH__'
+  external_port: null
+  external_host: null
+  keys: __DATA_DIR__/ssh-keys
+  host_key_verification: prompt
+  inactivity_timeout: 30m
+  keepalive_interval: null
+http:
+  listen: '[::]:__PORT__'
+  external_port: 443
+  external_host: null
+  certificate: __DATA_DIR__/tls.certificate.pem
+  key: __DATA_DIR__/tls.key.pem
+  trust_x_forwarded_headers: true
+  session_max_age: 30m
+  cookie_max_age: 1day
+  sni_certificates: []
+kubernetes:
+  enable: true
+  listen: '[::]:__PORT_KUBERNETES__'
+  external_port: null
+  external_host: null
+  certificate: __DATA_DIR__/tls.certificate.pem
+  key: __DATA_DIR__/tls.key.pem
+  session_max_age: 30m
+mysql:
+  enable: true
+  listen: '[::]:__PORT_MYSQL__'
+  external_port: null
+  external_host: null
+  certificate: __DATA_DIR__/tls.certificate.pem
+  key: __DATA_DIR__/tls.key.pem
+postgres:
+  enable: true
+  listen: '[::]:__PORT_POSTGRES__'
+  external_port: null
+  external_host: null
+  certificate: __DATA_DIR__/tls.certificate.pem
+  key: __DATA_DIR__/tls.key.pem
+log:
+  retention: 7days
+  audit_retention: 11months 30days 3h 50m 24s
+  send_to: null
+  format: text
