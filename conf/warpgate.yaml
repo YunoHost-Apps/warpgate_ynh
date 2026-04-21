@@ -18,7 +18,7 @@ ssh:
   keepalive_interval: null
 http:
   listen: '[::]:__PORT__'
-  external_port: null
+  external_port: 443
   external_host: null
   certificate: __DATA_DIR__/tls.certificate.pem
   key: __DATA_DIR__/tls.key.pem
