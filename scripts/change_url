@@ -25,14 +25,14 @@ ynh_config_change_url_nginx
 #=================================================
 ynh_script_progression "Updating $app configuration..."
 
-ynh_write_var_in_file --file=$install_dir/warpgate.yaml --key=external_host --value=$new_domain
+ynh_write_var_in_file --file=$install_dir/warpgate.yaml --key=external_host --value=$new_domain --after="path: $data_dir/recordings"
 
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemctl --service="$app" --action="start"
+ynh_systemctl --service="$app" --action="start" --log_path=systemd
 
 #=================================================
 # END OF SCRIPT
