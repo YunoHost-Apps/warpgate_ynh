@@ -1,1 +1,1 @@
-The default username is `admin` and the password is the one you've set during setup.
+The default username is `admin` and the password is the one you set during setup.
