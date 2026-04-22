@@ -1,4 +1,4 @@
-Warpgate is a smart & fully transparent SSH, HTTPS, MySQL, Postgres, and Kubernetes bastion host that doesn't require a client app or an SSH wrapper.
+Warpgate is a smart & fully transparent SSH, HTTP, MySQL, Postgres, and Kubernetes bastion host that doesn't require a client app or an SSH wrapper.
 
 ### Features
 
