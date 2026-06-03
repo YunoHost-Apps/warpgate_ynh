@@ -9,7 +9,7 @@ external_host: __DOMAIN__
 database_url: postgres://__DB_NAME__:__DB_PWD__@127.0.0.1:5432/__DB_NAME__
 ssh:
   enable: true
-  listen: '[::]:__PORT_SSH__'
+  listen: '[::1]:__PORT_SSH__'
   external_port: null
   external_host: null
   keys: __DATA_DIR__/ssh-keys
@@ -17,7 +17,7 @@ ssh:
   inactivity_timeout: 30m
   keepalive_interval: null
 http:
-  listen: '[::]:__PORT__'
+  listen: '[::1]:__PORT__'
   external_port: 443
   external_host: null
   certificate: __DATA_DIR__/tls.certificate.pem
@@ -28,7 +28,7 @@ http:
   sni_certificates: []
 kubernetes:
   enable: true
-  listen: '[::]:__PORT_KUBERNETES__'
+  listen: '[::1]:__PORT_KUBERNETES__'
   external_port: null
   external_host: null
   certificate: __DATA_DIR__/tls.certificate.pem
@@ -36,14 +36,14 @@ kubernetes:
   session_max_age: 30m
 mysql:
   enable: true
-  listen: '[::]:__PORT_MYSQL__'
+  listen: '[::1]:__PORT_MYSQL__'
   external_port: null
   external_host: null
   certificate: __DATA_DIR__/tls.certificate.pem
   key: __DATA_DIR__/tls.key.pem
 postgres:
   enable: true
-  listen: '[::]:__PORT_POSTGRES__'
+  listen: '[::1]:__PORT_POSTGRES__'
   external_port: null
   external_host: null
   certificate: __DATA_DIR__/tls.certificate.pem
