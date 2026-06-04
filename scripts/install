@@ -32,11 +32,20 @@ yunohost service add "$app" --description="Secure and authenticated SSH, HTTP, M
 ynh_script_progression "Installing $app..."
 
 pushd "$install_dir"
- 	ynh_hide_warnings ./warpgate --config=$install_dir/warpgate.yaml unattended-setup --data-path="$data_dir" --ssh-port=$port_ssh --http-port=$port --mysql-port=$port_mysql --postgres-port=$port_postgres --kubernetes-port=$port_kubernetes --admin-password=$password --database-url="postgres://$db_user:$db_pwd@127.0.0.1:5432/$db_name" --external-host="$domain"
+ 	ynh_hide_warnings ./warpgate --config=$install_dir/warpgate.yaml unattended-setup --data-path="$data_dir" --ssh-port=$port_ssh --http-port=$port --mysql-port=$port_mysql --postgres-port=$port_postgres --kubernetes-port=$port_kubernetes --admin-password=$password --database-url="postgres://$db_user:$db_pwd@127.0.0.1:5432/$db_name" --external-host="$domain" --record-sessions
 popd
 
 chown -R $app:$app $install_dir
 chown -R $app:$app $data_dir
+
+#=================================================
+# ADD WARPGATE.YAML
+#=================================================
+ynh_script_progression "Upgrading warpgate config..."
+
+ynh_config_add --template="warpgate.yaml" --destination="$install_dir/warpgate.yaml"
+
+chown -R $app:$app $install_dir/warpgate.yaml
 
 #=================================================
 # START SYSTEMD SERVICE

@@ -1,4 +1,4 @@
-# Config generated in version v0.23.4-modified
+# Config generated in version v0.24.1-modified
 # yaml-language-server: $schema=https://raw.githubusercontent.com/warp-tech/warpgate/refs/heads/main/config-schema.json
 
 sso_providers: []
@@ -9,7 +9,7 @@ external_host: __DOMAIN__
 database_url: postgres://__DB_NAME__:__DB_PWD__@127.0.0.1:5432/__DB_NAME__
 ssh:
   enable: true
-  listen: '[::1]:__PORT_SSH__'
+  listen: '[::]:__PORT_SSH__'
   external_port: null
   external_host: null
   keys: __DATA_DIR__/ssh-keys
@@ -17,7 +17,7 @@ ssh:
   inactivity_timeout: 30m
   keepalive_interval: null
 http:
-  listen: '[::1]:__PORT__'
+  listen: '[::]:__PORT__'
   external_port: 443
   external_host: null
   certificate: __DATA_DIR__/tls.certificate.pem
@@ -28,7 +28,7 @@ http:
   sni_certificates: []
 kubernetes:
   enable: true
-  listen: '[::1]:__PORT_KUBERNETES__'
+  listen: '[::]:__PORT_KUBERNETES__'
   external_port: null
   external_host: null
   certificate: __DATA_DIR__/tls.certificate.pem
@@ -36,14 +36,14 @@ kubernetes:
   session_max_age: 30m
 mysql:
   enable: true
-  listen: '[::1]:__PORT_MYSQL__'
+  listen: '[::]:__PORT_MYSQL__'
   external_port: null
   external_host: null
   certificate: __DATA_DIR__/tls.certificate.pem
   key: __DATA_DIR__/tls.key.pem
 postgres:
   enable: true
-  listen: '[::1]:__PORT_POSTGRES__'
+  listen: '[::]:__PORT_POSTGRES__'
   external_port: null
   external_host: null
   certificate: __DATA_DIR__/tls.certificate.pem
