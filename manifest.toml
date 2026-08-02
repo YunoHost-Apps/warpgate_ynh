@@ -4,8 +4,8 @@ packaging_format = 2
 
 id = "warpgate"
 name = "Warpgate"
-description.en = "Secure and authenticated SSH, HTTP, MYSQL, Postgres, and Kubernetes tunnels"
-description.fr = "Tunnels SSH, HTTP, MySQL, Postgres et Kubernetes sécurisés et authentifiés"
+description.en = "Secure access to SSH, HTTPS, RDP, VNC, Kubernetes, PostgreSQL and MySQL"
+description.fr = "Accès sécurisé à SSH, HTTPS, RDP, VNC, Kubernetes, PostgreSQL et MySQL"
 
 version = "0.27.1~ynh1"
 
@@ -18,9 +18,9 @@ admindoc = "https://warpgate.null.page/docs/"
 code = "https://github.com/warp-tech/warpgate"
 
 [integration]
-yunohost = ">= 12.1.17"
+yunohost = ">= 12.1.40.1"
 helpers_version = "2.1"
-architectures = ["amd64","arm64" ]
+architectures = ["amd64","arm64"]
 multi_instance = false
 
 ldap = false
@@ -75,6 +75,8 @@ ram.runtime = "30M"
     mysql.exposed = "TCP"
     postgres.exposed = "TCP"
     kubernetes.exposed = "TCP"
+    rdp.exposed = "TCP"
+    vnc.exposed = "TCP"
 
     [resources.apt]
     packages = "postgresql"

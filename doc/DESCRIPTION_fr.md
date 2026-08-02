@@ -1,9 +1,11 @@
-Warpgate est un bastion host SSH, HTTP, MySQL et Postgre intelligent et entièrement transparent qui ne nécessite ni application client ni wrapper SSH.
+Warpgate est un hôte de bastion intelligent et entièrement transparent SSH, HTTPS, Kubernetes, MySQL, PostgreSQL, RDP et VNC qui n'a pas besoin d'une application client ou d'un wrapper SSH.
 
 ### Caractéristiques
-
-- Configurez-le dans votre DMZ, ajoutez des comptes utilisateurs et attribuez-les facilement à des hôtes et des URL spécifiques au sein du réseau.
-- Warpgate enregistrera chaque session pour que vous puissiez la visionner (en direct) et la rejouer ultérieurement via une interface web d'administration intégrée.
-- Ce n'est pas un hôte relais : il transfère la connexion directement à la cible de manière totalement transparente pour le client.
-- Prise en charge native de l'authentification à deux facteurs (2FA) et de l'authentification unique (SSO) (TOTP et OpenID Connect)
+- Configurez-le dans votre DMZ, ajoutez des comptes utilisateurs et assignez-les facilement à des hôtes et des URL spécifiques dans le réseau.
+- Warpgate enregistrera chaque session pour que vous puissiez voir (vivre) et rejouer plus tard à travers une interface web d'administration intégrée.
+- L'accès SSH, RDP et VNC basé sur le navigateur est intégré; les clients natifs continuent de travailler.
+- Pas un hôte de saut - avance la connexion directement à la cible d'une manière qui est entièrement transparente pour le client.
+- Support Native 2FA et SSO (TOTP & OpenID Connect)
+- Protection brute intégrée avec blocage IP et verrouillage utilisateur
 - Fichier binaire unique sans dépendances.
+- Ecrit en 100% rouille sûre.
