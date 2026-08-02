@@ -1,9 +1,11 @@
-Warpgate is a smart & fully transparent SSH, HTTP, MySQL, Postgres, and Kubernetes bastion host that doesn't require a client app or an SSH wrapper.
+Warpgate is a smart & fully transparent SSH, HTTPS, Kubernetes, MySQL, PostgreSQL, RDP and VNC bastion host that doesn't require a client app or an SSH wrapper.
 
 ### Features
-
 - Set it up in your DMZ, add user accounts and easily assign them to specific hosts and URLs within the network.
 - Warpgate will record every session for you to view (live) and replay later through a built-in admin web UI.
-- Not a jump host; forwards connection straight to the target in a way that's fully transparent to the client.
+- Browser-based SSH, RDP and VNC access is built in; native clients continue to work.
+- Not a jump host - forwards connection straight to the target in a way that's fully transparent to the client.
 - Native 2FA and SSO support (TOTP & OpenID Connect)
+- Built-in brute-force protection with IP blocking and user lockout
 - Single binary with no dependencies.
+- Written in 100% safe Rust.
