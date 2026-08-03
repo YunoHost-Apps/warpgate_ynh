@@ -7,7 +7,7 @@ name = "Warpgate"
 description.en = "Secure access to SSH, HTTPS, RDP, VNC, Kubernetes, PostgreSQL and MySQL"
 description.fr = "Accès sécurisé à SSH, HTTPS, RDP, VNC, Kubernetes, PostgreSQL et MySQL"
 
-version = "0.27.1~ynh1"
+version = "0.27.2~ynh1"
 
 maintainers = ["eric_G"]
 
@@ -49,11 +49,11 @@ ram.runtime = "30M"
     in_subdir = false
     extract = false
     rename = "warpgate"
-    amd64.url = "https://github.com/warp-tech/warpgate/releases/download/v0.27.1/warpgate-v0.27.1-x86_64-linux"
-    amd64.sha256 = "dd299ab93a210ecb2811475fd3251a9081e8e68b2c8d066c254c2e45d2f1c4d0"
+    amd64.url = "https://github.com/warp-tech/warpgate/releases/download/v0.27.2/warpgate-v0.27.2-x86_64-linux"
+    amd64.sha256 = "ad5c0eb589c39050763b68dde8732b099dff849a97df3ca53201b48ef7bcd194"
 
-    arm64.url = "https://github.com/warp-tech/warpgate/releases/download/v0.27.1/warpgate-v0.27.1-arm64-linux"
-    arm64.sha256 = "515cbf0a073b29a72fa125cf6c0b251581d7c12f71a45598c41c58196e0ea702"
+    arm64.url = "https://github.com/warp-tech/warpgate/releases/download/v0.27.2/warpgate-v0.27.2-arm64-linux"
+    arm64.sha256 = "af750b96d828f7f0e51fdc12d7df0269b31e730befa6667c2c17ae0820ac10fb"
     
     autoupdate.strategy = "latest_github_release"
     autoupdate.asset.amd64 = "^warpgate-.*-x86_64-linux$"
