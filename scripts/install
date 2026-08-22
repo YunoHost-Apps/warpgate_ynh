@@ -52,7 +52,7 @@ chown -R $app:$app $install_dir/warpgate.yaml
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemctl --service="$app" --action="start" --log_path=systemd --wait_until="RDP"
+ynh_systemctl --service="$app" --action="start" --log_path=systemd --wait_until="Cookie domain configured"
 
 #=================================================
 # END OF SCRIPT
