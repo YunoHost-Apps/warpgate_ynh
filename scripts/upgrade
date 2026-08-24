@@ -29,7 +29,7 @@ ynh_script_progression "Upgrading warpgate config..."
 
 ynh_config_add --template="warpgate.yaml" --destination="$install_dir/warpgate.yaml"
 
-chown -R $app:$app $install_dir/warpgate.yaml
+chown $app:$app $install_dir/warpgate.yaml
 
 if ynh_app_upgrading_from_version_before_or_equal_to 0.21.0~ynh1; then
     ynh_script_progression "Applying postgres fix..."
@@ -37,7 +37,7 @@ if ynh_app_upgrading_from_version_before_or_equal_to 0.21.0~ynh1; then
 fi
 
 #=================================================
-# GENERATE AND STORE ENC KEY
+# ENCRYPTION KEY
 #=================================================
 ynh_script_progression "Checking for encryption key..."
 
@@ -46,6 +46,11 @@ if ynh_app_upgrading_from_version_before_or_equal_to 0.28.3~ynh1; then
     warpgate_encryption_key=$(openssl rand -base64 32)
     ynh_app_setting_set --key=warpgate_encryption_key --value=$warpgate_encryption_key
 fi
+
+ynh_config_add --template="env" --destination="$install_dir/.env"
+
+chown $app:$app $install_dir/.env
+chmod o-rwx $install_dir/.env
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATION
