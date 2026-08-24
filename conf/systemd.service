@@ -7,6 +7,7 @@ StartLimitIntervalSec=0
 Type=simple
 User=__APP__
 Group=__APP__
+Environment="WARPGATE_ENCRYPTION_KEY=__WARPGATE_ENCRYPTION_KEY__"
 WorkingDirectory=__INSTALL_DIR__/
 ExecStart=__INSTALL_DIR__/warpgate --config __INSTALL_DIR__/warpgate.yaml run
 Restart=always

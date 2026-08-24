@@ -37,6 +37,17 @@ if ynh_app_upgrading_from_version_before_or_equal_to 0.21.0~ynh1; then
 fi
 
 #=================================================
+# GENERATE AND STORE ENC KEY
+#=================================================
+ynh_script_progression "Checking for encryption key..."
+
+if ynh_app_upgrading_from_version_before_or_equal_to 0.28.3~ynh1; then
+    ynh_script_progression "Generating encryption key..."
+    warpgate_encryption_key=$(openssl rand -base64 32)
+    ynh_app_setting_set --key=warpgate_encryption_key --value=$warpgate_encryption_key
+fi
+
+#=================================================
 # REAPPLY SYSTEM CONFIGURATION
 #=================================================
 ynh_script_progression "Upgrading system configurations related to $app..."
