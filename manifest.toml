@@ -7,7 +7,7 @@ name = "Warpgate"
 description.en = "Secure access to SSH, HTTPS, RDP, VNC, Kubernetes, PostgreSQL and MySQL"
 description.fr = "Accès sécurisé à SSH, HTTPS, RDP, VNC, Kubernetes, PostgreSQL et MySQL"
 
-version = "0.28.3~ynh2"
+version = "0.28.3~ynh1"
 
 maintainers = ["eric_G"]
 
