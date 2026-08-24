@@ -7,6 +7,20 @@
 source /usr/share/yunohost/helpers
 
 #=================================================
+# ENCRYPTION KEY
+#=================================================
+ynh_script_progression "Generating encryption key..."
+
+warpgate_encryption_key=$(openssl rand -base64 32)
+
+ynh_app_setting_set --key=warpgate_encryption_key --value=$warpgate_encryption_key
+
+ynh_config_add --template="env" --destination="$install_dir/.env"
+
+chown $app:$app $install_dir/.env
+chmod o-rwx $install_dir/.env
+
+#=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
 #=================================================
 ynh_script_progression "Setting up source files..."
@@ -45,7 +59,7 @@ ynh_script_progression "Upgrading warpgate config..."
 
 ynh_config_add --template="warpgate.yaml" --destination="$install_dir/warpgate.yaml"
 
-chown -R $app:$app $install_dir/warpgate.yaml
+chown $app:$app $install_dir/warpgate.yaml
 
 #=================================================
 # START SYSTEMD SERVICE
