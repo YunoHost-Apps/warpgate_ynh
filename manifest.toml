@@ -31,6 +31,7 @@ ram.build = "80M"
 ram.runtime = "30M"
 
 [install]
+
     [install.domain]
     type = "domain"
 
@@ -60,7 +61,6 @@ ram.runtime = "30M"
     autoupdate.asset.arm64 = "^warpgate-.*-arm64-linux$"
     autoupdate.upstream = "https://github.com/warp-tech/warpgate"
     
-
     [resources.system_user]
 
     [resources.install_dir]
