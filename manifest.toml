@@ -70,6 +70,7 @@ ram.runtime = "30M"
     [resources.permissions]
     main.url = "/"
     main.auth_header = false
+    main.additional_urls = [ "/@warpage" ]
 
     [resources.ports]
     ssh.exposed = "TCP"
