@@ -9,7 +9,6 @@ ssh:
   proxy_protocol: false
   external_port: null
   external_host: null
-  keys: __DATA_DIR__/ssh-keys
   host_key_verification: prompt
   inactivity_timeout: 30m
   keepalive_interval: null
